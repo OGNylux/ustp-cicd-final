@@ -21,7 +21,6 @@ import {
 } from '@/lib/tetris';
 
 type GameState = 'idle' | 'playing' | 'paused' | 'gameOver';
-const test = '';
 
 function App() {
   const [board, setBoard] = useState<Cell[][]>(createEmptyBoard());
