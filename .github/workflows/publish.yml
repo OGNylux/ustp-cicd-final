@@ -23,14 +23,12 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       - name: Download build artifacts from build workflow
         uses: dawidd6/action-download-artifact@v3
         with:
@@ -38,7 +36,6 @@ jobs:
           workflow_conclusion: success
           name: web-application
           path: dist
-          run_id: ${{ inputs.run_id }}
           if_no_artifact_found: fail
 
       - name: Setup Pages
