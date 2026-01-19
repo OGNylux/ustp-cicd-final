@@ -11,6 +11,7 @@ const projectRoot = process.env.PROJECT_ROOT || import.meta.dirname
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/ustp-cicd-final/',
   plugins: [
     mode === 'test' ? react({ include: /\.(jsx|tsx)$/ }) : reactSwc({
       devTarget: 'esnext',
