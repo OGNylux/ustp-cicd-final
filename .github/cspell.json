@@ -24,7 +24,21 @@
     "git",
     "origin",
     "v1.0.0",
-    "opensource"
+    "opensource",
+    "opensource-security",
+    "bounty",
+    "buffer-overflow",
+    "SQL",
+    "injection",
+    "cross-site",
+    "scripting",
+    "coordinated",
+    "disclosure",
+    "proof-of-concept",
+    "exploit",
+    "triage",
+    "POC",
+    "Safe-Harbor"
   ],
   "ignorePaths": [
     "node_modules",
