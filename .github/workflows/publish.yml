@@ -1,14 +1,11 @@
 name: publish
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   workflow_run:
     workflows: ["build"]
     types:
       - completed
-    branches:
-      - main
-      - master
 
 permissions:
   contents: read
@@ -27,29 +24,20 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
+
     steps:
       - name: Download build artifacts from build workflow
         uses: dawidd6/action-download-artifact@v3
         with:
           workflow: build.yml
-          workflow_conclusion: success
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
           name: web-application
           path: dist
           if_no_artifact_found: fail
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
-      - name: Create SPA fallback 404
-        run: |
-          # If this runner has the extracted build in `dist`, copy index.html to 404.html
-          if [ -f "dist/index.html" ]; then
-            cp -v dist/index.html dist/404.html
-          else
-            echo "dist/index.html not found"
-            exit 1
-          fi
 
       - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v3
