@@ -23,7 +23,8 @@
     "dev",
     "git",
     "origin",
-    "v1.0.0"
+    "v1.0.0",
+    "opensource"
   ],
   "ignorePaths": [
     "node_modules",
