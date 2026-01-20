@@ -1,0 +1,29 @@
+name: Spellcheck Markdown
+
+on:
+  pull_request: {}
+
+permissions:
+  contents: read
+
+jobs:
+  spellcheck:
+    name: Spellcheck Markdown files
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install cspell
+        run: npm install -g cspell
+
+      - name: Run spellcheck on markdown
+        run: |
+          # run spellcheck for all markdown files; exit non-zero on errors
+          cspell "**/*.md" --config .github/cspell.json
