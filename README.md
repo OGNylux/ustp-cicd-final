@@ -26,7 +26,7 @@ Prerequisites
 Install
 
 ```bash
-npm ci
+npm i
 ```
 
 Local development
