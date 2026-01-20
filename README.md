@@ -66,9 +66,3 @@ Create a GitHub Pages release (via tags)
 git tag v1.0.0
 git push origin v1.0.0
 ```
-
-Notes
-
-- The `build` badge is intentionally scoped to `push` events only (not pull requests).
-- Workflow changes trigger code owner review if `.github/CODEOWNERS` is configured for your username/team.
-- If you want the coverage badge enabled, enable Codecov (or another coverage service) and add the badge URL above.
