@@ -1,0 +1,33 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "vscode",
+    "USTP",
+    "CI",
+    "CD",
+    "Tetris",
+    "OGNylux",
+    "ustp-cicd-final",
+    "Vite",
+    "Node.js",
+    "npm",
+    "Codecov",
+    "GitHub",
+    "Pages",
+    "PR",
+    "lcov",
+    "localhost",
+    "5173",
+    "preview",
+    "dev",
+    "git",
+    "origin",
+    "v1.0.0"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    "coverage"
+  ]
+}
